@@ -77,6 +77,114 @@ print(s1)  # Output: 'pothoon'
 # Use square bracket [] for indexing and slicing
 # Use round brackets () for functions and methods
 
+#Now we will start with dictionaries : a new data structure in Python
+#Use curly bracket to create a dictionary 
+
+stocks_dict = {'HDFC' : 'BANK', 'TCS' : 'TECH', 'INFY' : 'TECHNOLOGY', 'RELIANCE' : 'ENERGY'}
+# You can access the value using the key
+print(stocks_dict['HDFC'])  # Output: 'BANK'
+
+#The format is 'key':'value'
+# value can be text or number or list or dictionary
+
+#You can access the value using the key
+print(stocks_dict['TCS'])  # Output: 'TECH'
+
+#You can access key using the value
+for key, value in stocks_dict.items():
+    if value == 'TECH':
+        print(key)  # Output: 'TCS' (the key for the value 'TECH')
+
+#Alternatively we can use 'get' function to access the value using the key
+print(stocks_dict.get('ReLIANCE'))  # Output: 'ENERGY'
+# If the key does not exist, it will return None
+
+print(stocks_dict.get('RELIANCE'))
+
+#update function is used to update the value of an existing key or add a new key-value pair
+stocks_dict.update({'HDFC': 'BANKING', 'WIPRO': 'TECHNOLOGY', 'NIFTY': 'INDICES'})
+# This will update the value of 'HDFC' to 'BANKING' and add 'WIPRO' and 'NIFTY'
+
+print(stocks_dict)
+# You can also add a new key-value pair
+
+#you can not have duplicate keys in a dictionary
+# If you try to add a key that already exists, it will update the value
+You can have duplicate values, but not duplicate keys
+# For example, if you add 'HDFC' again, it will update the value
+
+# Use type fuction to check the type of the variable
+print(type(stocks_dict))  # Output: <class 'dict'>
+
+# type function will give output as dict, int, str, list, tuple, set, etc.
+
+stock_dict1=stocks_dict.copy()  # This will create a copy of the dictionary
+print(stock_dict1)  # Output: {'HDFC': 'BANKING', 'TCS': 'TECH', 'INFY': 'TECHNOLOGY', 'RELIANCE': 'ENERGY', 'WIPRO': 'TECHNOLOGY', 'NIFTY': 'INDICES'}
+
+stock_dict1.popitem('HDFC')  # This will remove the key-value pair with key 'HDFC'
+print(stock_dict1)  # Output: {'TCS': 'TECH', 'INFY': 'TECHNOLOGY', 'RELIANCE': 'ENERGY', 'WIPRO': 'TECHNOLOGY', 'NIFTY': 'INDICES'}
+
+# dictionary doesn't have an index, so you can't access elements by index
+
+#There are two ways to get values from a dictionary: square brackets or get function
+# Using square brackets
+print(stocks_dict['TCS'])  # Output: 'TECH'
+# Using get function    
+print(stocks_dict.get('TCS'))  # Output: 'TECH'
+
+#Two ways to update a dictionary: update function or square brackets
+# Using update function
+stocks_dict.update({'TCS': 'TECHNOLOGY'})  # This will update the value of 'TCS' to 'TECHNOLOGY'
+print(stocks_dict['TCS'])  # Output: 'TECHNOLOGY'        
+# Using square brackets
+stocks_dict['TCS'] = 'TECHNOLOGY'  # This will also update the value of 'TCS' to 'TECHNOLOGY'
+print(stocks_dict['TCS'])  # Output: 'TECHNOLOGY'
+
+stock_dict2=stock_dict1.copy()  # This will create a copy of the dictionary
+print(stock_dict2)  # Output: {'TCS': 'TECH', 'INFY': 'TECHNOLOGY', 'RELIANCE': 'ENERGY', 'WIPRO': 'TECHNOLOGY', 'NIFTY': 'INDICES'}
+
+# To delete a key-value pair from a dictionary, you can use the del function or pop function
+# Using del function
+del stock_dict2['TCS']  # This will delete the key-value pair with key 'TCS'        
+print(stock_dict2)  # Output: {'INFY': 'TECHNOLOGY', 'RELIANCE': 'ENERGY', 'WIPRO': 'TECHNOLOGY', 'NIFTY': 'INDICES'}
+# Using pop function    
+removed_value = stock_dict2.pop('INFY')  # This will remove the key-value pair with key 'INFY' and return the value
+print(removed_value)  # Output: 'TECHNOLOGY'
+print(stock_dict2)  # Output: {'RELIANCE': 'ENERGY', 'WIPRO': 'TECHNOLOGY', 'NIFTY': 'INDICES'}
+
+stock_dict3= stock_dict2.copy()  # This will create a copy of the dictionary
+print(stock_dict3)  # Output: {'RELIANCE': 'ENERGY', 'WIPRO': 'TECHNOLOGY', 'NIFTY': 'INDICES'} 
+
+stock_dict3.update({'TCS': 'TECH', 'INFY': 'TECHNOLOGY', 'HCLTECH': 'TECHNOLOGY', 'ITC': 'FMCG'})  # This will add 'TCS' and 'INFY' to the dictionary
+
+print(stock_dict3)  # Output: {'RELIANCE': 'ENERGY', 'WIPRO': 'TECHNOLOGY', 'NIFTY': 'INDICES', 'TCS': 'TECH', 'INFY': 'TECHNOLOGY', 'HCLTECH': 'TECHNOLOGY', 'ITC': 'FMCG'}
+
+#Strings are immutable, meaning you cannot change them in place
+#You need to create a new string with the updated value/string
+#List and dictionaries are mutable, meaning you can change them in place
+
+#Let's do joint function and split function in strings 
+
+# Use [] to access elements from strings, lists and dictionaries
+
+#split function will convert your string into a list of strings
+
+a='hello-world'
+print(a.split('-'))  # Output: ['hello', 'world']
+
+b='a b c d e f g h i j k l m n o p q r s t u v w x y z'
+c=b.split(' ')  # This will split the string into a list of strings
+print(c)  # Output: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+d=['tsla', 'aapl', 'amzn', 'googl', 'msft']
+#join function will convert your list of strings into a single string   
+print(', '.join(d))  # Output: 'tsla, aapl, amzn, googl, msft'
+e=', '.join(d)  # This will create a new string with the elements of the list joined by ', '
+print(e)  # Output: 'tsla, aapl, amzn, googl, msft'
+
+# ALternatively, you can use a different separator
+f='-'.join(d)  # This will create a new string with the elements of the list joined by '-'  
+print(f)  # Output: 'tsla-aapl-amzn-googl-msft'
 
 
 
