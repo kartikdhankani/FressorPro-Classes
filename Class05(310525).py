@@ -105,4 +105,191 @@ l2=[44,55,66,[67,57,46,[78,90,92,[12,13,14]]]]
 # Now try to get 13 from this list
 l2[3][3][3][1]
 
+# dictionary of lists
+
+d1={'tech':[333,444,555,666],'fin':[66,77,88],'gas':[89,67,45]}
+# Accessing elements in a dictionary of lists
+d1.get('tech')
+# Accessing elements in a dictionary of lists
+d1.get('tech')[2]
+# Accessing elements in a dictionary of lists - List 'tech' and Element 3
+
+d2={'tech':{'tcs':300,'amzn':780,'goog':890},'fin':{'jpmporgan':678,'hdfc':683}, 'telecom':{'jio':456, 'airtel':567}}
+# Accessing elements in a dictionary of dictionaries
+d2.get('tech')
+d2.get('tech').get('tcs')
+# Accessing elements in a dictionary of dictionaries - Dictionary 'tech' and Key 'tcs'
+
+
+# Practice Exercise
+
+hedge_fund_portfolio = {
+    "fund_name": "Alpha Investments",
+    "portfolio_value": 50000000,
+    "investments": [
+        {
+            "type": "Equity",
+            "holdings": [
+                {"ticker": "AAPL", "quantity": 10000, "average_buy_price": 120},
+                {"ticker": "TSLA", "quantity": 5000, "average_buy_price": 600}
+            ]
+        },
+        {
+            "type": "Fixed Income",
+            "holdings": [
+                {"bond_issue": "US Treasuries", "amount": 10000000, "yield": 1.5}
+            ]
+        },
+        {
+            "type": "Derivatives",
+            "holdings": [
+                {"instrument": "Options", "details": {"underlying": "GOOGL", "type": "Call", "strike_price": 1500}}
+            ]
+        }
+    ],
+    "performance_metrics": {
+        "year_to_date_return": 5.2,
+        "five_year_annualized_return": 7.1
+    }
+}
+
+# Q1 Display the quantity of "TSLA" equity held in the portfolio.
+hedge_fund_portfolio['investments'][0]['holdings'][1]['quantity']
+
+# Q2 Add a new investment type "Real Estate" with one holding of a property "Downtown Complex" valued at 2000000.
+hedge_fund_portfolio['investments'].append({"type": "Real Estate", "holdings": [{"property": "Downtown Complex", "value": 2000000}]})
+print(hedge_fund_portfolio['investments'])
+
+#Q3 Update the portfolio value to 51000000.
+hedge_fund_portfolio['portfolio_value'] = 51000000
+print(hedge_fund_portfolio['portfolio_value'])
+
+
+
+#Practice Exercise 2
+
+credit_risk_profiles = {
+    "individuals": [
+        {
+            "name": "John Doe",
+            "credit_score": 750,
+            "outstanding_loans": {
+                "auto_loan": {"amount": 20000, "interest_rate": 3.5},
+                "home_loan": {"amount": 150000, "interest_rate": 2.8}
+            },
+            "payment_history": [("2024-01-10", "On Time"), ("2024-01-01", "Late")]
+        },
+        {
+            "name": "Jane Smith",
+            "credit_score": 680,
+            "outstanding_loans": {
+                "credit_card": {"amount": 5000, "interest_rate": 12.0}
+            },
+            "payment_history": [("2024-01-10", "On Time")]
+        }
+    ]
+}
+
+# get the value 12.0 from the credit_risk_profiles dictionary
+a=credit_risk_profiles['individuals'][1]['outstanding_loans']['credit_card']['interest_rate']
+print(a)
+#individua's is a list and we are accessing the second element in the list using index 1
+b=credit_risk_profiles['individuals'][1]
+print(b)
+# now you will get a dictionary as output, use 'outsstanding_loans' to get the value of the key 'credit_card'
+
+# Q2 Get "Late" string from the payment history of John Doe.
+
+a1=credit_risk_profiles
+print(a1)
+#a1 will give a dictionary 
+
+a2=credit_risk_profiles.get['individuals'][0]
+print(a2)
+
+
+#practice Exercise 3
+
+foreign_exchange = {
+    "base_currency": "USD",
+    "exchange_rates": {
+        "EUR": {
+            "current_rate": 0.85,
+            "historical_rates": [
+                {"date": "2024-01-10", "rate": 0.84},
+                {"date": "2024-01-09", "rate": 0.85}
+            ]
+        },
+        "JPY": {
+            "current_rate": 110.00,
+            "historical_rates": [
+                {"date": "2024-01-10", "rate": 109.50},
+                {"date": "2024-01-09", "rate": 110.20}
+            ]
+        }
+    }
+}
+
+# Task: Get "110.00" from the foreign_exchange dictionary.
+a3=foreign_exchange.get('exchange_rates').get('JPY').get('current_rate')
+print(a3)
+
+#Task: Get "2024-01-09" from the historical rates of EUR.
+foreign_exchange.get('exchange_rates').get('EUR').get('historical_rates')[1].get('date')
+# This will give you the date "2024-01-09" from the historical rates of EUR
+
+
+
+
+#Practice exercise
+
+investment_portfolio = {
+    "investor_name": "Jane Doe",
+    "portfolio_id": "JD1234",
+    "assets": {
+        "stocks": [
+            {
+                "ticker": "AAPL",
+                "quantity": 50,
+                "purchase_price": 120.00,
+                "current_price": 130.00
+            },
+            {
+                "ticker": "MSFT",
+                "quantity": 30,
+                "purchase_price": 200.00,
+                "current_price": 210.00
+            }
+        ],
+        "bonds": [
+            {
+                "identifier": "US123456",
+                "quantity": 100,
+                "purchase_price": 1000.00,
+                "current_price": 1020.00,
+                "maturity_date": "2030-01-01"
+            }
+        ],
+        "mutual_funds": [
+            {
+                "name": "XYZ Growth Fund",
+                "quantity": 200,
+                "purchase_price": 15.00,
+                "current_price": 15.50
+            }
+        ]
+    },
+    "cash_holdings": 10000.00,
+    "investment_goals": {"retirement": 2035, "education": 2025}
+}
+
+
+#Task: get value of "210"
+investment_portfolio['assets']['stocks'][1]['current_price']
+
+#alternative way to get the value of "210"; use get function
+investment_portfolio.get('assets').get('stocks')[1].get('current_price')
+
+
+#Practice Exercise 5
 
