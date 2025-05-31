@@ -79,3 +79,30 @@ t2.join(',')
 print(t2)
 # join function is not available in tuple, it is available in list
 
+y1={'tsla':77, 'amzn':88, 'googl':99}
+y1.get('tsla')
+# get function is used to get the value of the key in the dictionary
+
+#() brackets are used for call function
+
+# Merge list within a list
+
+l1=[[1,2,3],[4,5,6],[7,8,9]]
+l1[0]
+# Accessing elements in a nested list
+l1[1]
+# Accessing elements in a nested list
+
+#multi-dimensional list are lists within a list
+
+l1[1][2]
+# Accessing elements in a nested list - List 2 and Element 3
+
+l1[2][0]
+# Accessing elements in a nested list - List 3 and Element 1
+
+l2=[44,55,66,[67,57,46,[78,90,92,[12,13,14]]]]
+# Now try to get 13 from this list
+l2[3][3][3][1]
+
+
