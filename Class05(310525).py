@@ -291,5 +291,44 @@ investment_portfolio['assets']['stocks'][1]['current_price']
 investment_portfolio.get('assets').get('stocks')[1].get('current_price')
 
 
-#Practice Exercise 5
+# New data structure: None data Type
 
+N=None
+print(N)
+print(type(N))
+# None is a special data type in Python that represents the absence of a value or a null value.
+type(N)
+
+#Truthy value and Fasly value
+#EVerything is a truthy value unless they are falsy value 
+#All strings are truthy value unless they are empty string
+#All empty strings, empty lists, empty tuples, empty dictionaries, and None are falsy values
+#Truthy values are values that evaluate to True in a boolean context
+
+#Example - 
+
+m=11
+n=12
+
+if abs:
+    print(True)
+else:
+    print(False)
+
+# Alternatively,
+
+if 0: 
+    print(True)
+else: 
+    print(False) 
+
+# This will print False because 0 is a falsy value
+
+if None: 
+    print(True)
+else: 
+    print(False) 
+# This will print False because None is a falsy value
+
+# Next class in class06(010625).py
+# The class ends here. Please continue to the next class for more advanced topics.
