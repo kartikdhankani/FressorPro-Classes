@@ -177,7 +177,7 @@ while True:
 
 
     #Class ends here
-    Next class will be on 08.06.2025
+    #Next class will be on 08.06.2025
 #Class time = 16:00 - 18:00
 #Class Number = 07
 
