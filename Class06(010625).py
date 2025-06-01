@@ -63,11 +63,7 @@ for i in range(100):
     print('Hello', i)
 
 #we have to generate a list of 50 even numbers
-l5=[]
-for k in range(100) :  # range(100) generates numbers from 0 to 99
-    if k%2 == 0: # Check if the number is even
-    l5.append(k) # Append the even number to the list
- print('k') 
+
 
 #type 3 loop - Use a range function to excess elements of a list
 l6 = [55,66,77,88,99,100]
@@ -109,5 +105,62 @@ for k in range(len(price)):
 vwap = num / den  # Calculate VWAP
 print('VWAP is', vwap)
 
+#pratcice Exercise 3
+#Calculate total dividend from a list of dividends and quantity of shares
+div=[0.5,1,0.2]
+stk_qty=[100,200,150]
+total_dividend = 0  # Initialize total dividend to 0
+for j in range(len(div)):
+    total_dividend += div[j] * stk_qty[j]  # Calculate dividend for each stock and add to total
+print('Total dividend is', total_dividend)
 
+#practice Exercise 4
+#Calculate number of profitable trades from a PNL list
+pnl = [20,-10,15,-5,30]
+
+profitable_trades = 0  # Initialize counter for profitable trades
+
+for i in pnl:
+    if i>0 :
+        profitable_trades = profitable_trades + 1 # += 1 will increment the counter by 1 for each profitable trade 
+print('Number of profitable trades:', profitable_trades)
+
+# Type 4 loop - Go through dictionary 
+
+d1 = {'tcs':600, 'amzn':700, 'googl':890}
+
+for i in d1: 
+    print(i, d1[i])  # This will print each key and its corresponding value in the dictionary d1
+
+print(list(d1.keys()))  # This will print all the keys in the dictionary d1
+print(list(d1.values()))  # This will print all the values in the dictionary d1
+print(list(d1.items()))  # This will print all the key-value pairs in the dictionary d1
+
+for i in d1.keys():
+    print(i, d1[i])  # This will print each key and its corresponding value in the dictionary d1
+
+for j in d1.values():
+    print(j)  # This will print each value in the dictionary d1
+
+for k,l in d1.items():
+    print(k, l)  # This will print each key and its corresponding value in the dictionary d1
+
+
+i=0
+while True:
+    if i==20:  # Break the loop when i reaches 20
+        break
+    print(i)
+    i = i+1
+
+
+
+#practice Exercise 5
+#Get all the even numbers between 1 and 100
+
+even_numbers = []  # Initialize an empty list to store even numbers
+for i in range(1, 101):  # Loop through numbers from 1 to 100
+    if i % 2 == 0:  # Check if the number is even
+        even_numbers.append(i)  # Add the even number to the list   
+print('Even numbers between 1 and 100:', even_numbers)  # Print the list of even numbers
 
