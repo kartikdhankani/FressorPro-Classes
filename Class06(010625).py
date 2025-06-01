@@ -174,3 +174,10 @@ while True:
         break
     print(num1,'X',num2, '=', num1*num2)  # Print the multiplication table for num1
     num2 += 1  # Increment num2 by 1 in each iteration
+
+
+    #Class ends here
+    Next class will be on 08.06.2025
+#Class time = 16:00 - 18:00
+#Class Number = 07
+
