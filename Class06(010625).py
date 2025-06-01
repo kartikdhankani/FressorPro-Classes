@@ -164,3 +164,13 @@ for i in range(1, 101):  # Loop through numbers from 1 to 100
         even_numbers.append(i)  # Add the even number to the list   
 print('Even numbers between 1 and 100:', even_numbers)  # Print the list of even numbers
 
+# Practice Exercise 6
+
+#Get a multiplication table for a given number
+num1=3
+num2=0
+while True:
+    if num2 ==101:
+        break
+    print(num1,'X',num2, '=', num1*num2)  # Print the multiplication table for num1
+    num2 += 1  # Increment num2 by 1 in each iteration
