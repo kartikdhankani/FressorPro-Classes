@@ -51,14 +51,3 @@ print(fib)
 
 
 
-
-#Class Exercise 02
-# l1 = [44,55,66,77]
-# Task - We have to invert the list 
-
-# Solution 1 using while loop
-
-l1=[44,55,66,77]
-
-
-
