@@ -79,5 +79,71 @@ b1.set_price(45)
 print(b1.price)
 
 
-#Clas = Bank A/C (Class Att. = Bank Name, Ins. Att. = A/C No., Balance, & Methods = init, deposit, )
+#Class = Bank A/C (Class Att. = Bank Name, Ins. Att. = A/C No., Balance, & Methods = init, deposit, )
+
+class BankAccount:
+    Bank_name='JPMorgan'
+
+    def __init__(self,ac_no,initial_bal):
+        self.ac_no=ac_no
+        self.balance=initial_bal
+    
+    def deposit(self,amount):
+        if amount<0:
+            print('Invalid Amount')
+        else:
+            self.balance=self.balance+amount
+
+    def withdraw(self, amount):
+        if amount<self.balance:
+            self.balance=self.balance-amount
+    def get_balance(self):
+        return self.balance
+    
+my_account=BankAccount(ac_no="123456789",initial_bal=10000)
+
+print(my_account.ac_no)
+my_account.deposit(500)
+my_account.withdraw(250)
+print(my_account.get_balance())
+
+
+class Broker:
+    stock_price={'tsla':100,'nifty':600,'amzn':700,'nvda':756}
+
+    def __init__(self,name,acc_no,money):
+        self.account_name=name
+        self.wallet=money
+        self.account_no=acc_no
+        self.portfolio={}
+
+    def get_portfolio(self):
+        return self.portfolio
+
+    def buy_stock(self,name):
+        found=self.stock_price.get(name)
+        if found:
+            if  self.wallet>found:
+                self.portfolio.update({name:found})
+                return 'buying'+name
+            else:
+                print('not enough money')
+        else:
+            print('not found')
+
+    def sell_stock(self,name):
+        found=self.portfolio.get(name)
+        if found:
+            self.portfolio.pop(name)
+            self.wallet=self.wallet+found
+            return 'selling'+name
+        else:
+            return print('stock not found')
+
+
+user1=Broker('matt',450,10000)
+print(user1.account_name,user1.wallet,user1.portfolio)
+print(user1.buy_stock('tsla'))
+print(user1.buy_stock('tsla'))
+print(user1.get_portfolio())
 
